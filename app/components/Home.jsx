@@ -10,6 +10,7 @@ export default function Home() {
           src="https://res.cloudinary.com/duliozn9g/image/upload/v1764056586/photo8_uxxgj4.jpg"
           alt="my photo"
           fill={true}
+          loading="eager"
           className="object-cover object-[center_40%]"
         />
         {/* Text Overlay */}
@@ -32,6 +33,7 @@ export default function Home() {
             alt="Emaa"
             width={200}
             height={200}
+            loading="eager"
             className="rounded-full"
           />
         </div>
