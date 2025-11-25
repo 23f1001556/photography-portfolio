@@ -28,7 +28,7 @@ export default function Contact() {
         <li>
           <strong>Portfolio:</strong>{" "}
           <a
-            href="https://portfolio-r6l4.vercel.app/"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 underline"
