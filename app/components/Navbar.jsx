@@ -36,6 +36,8 @@ export default function Navbar() {
             <li><Link href="/">Home</Link></li>
             <li><Link href="#story">Story</Link></li>
             <li><Link href="#gallery">Gallery</Link></li>
+            <li><Link href="#services">Services</Link></li>
+            <li><Link href="#testimonials">Testimonials</Link></li>
             <li><Link href="#contact">Contact</Link></li>
           </ul>
 
@@ -75,6 +77,8 @@ export default function Navbar() {
                 <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
                 <li><Link href="#story" onClick={() => setOpen(false)}>Story</Link></li>
                 <li><Link href="#gallery" onClick={() => setOpen(false)}>Gallery</Link></li>
+                <li><Link href="#services" onClick={() => setOpen(false)}>Services</Link></li>
+                <li><Link href="#testimonials" onClick={() => setOpen(false)}>Testimonials</Link></li>
                 <li><Link href="#contact" onClick={() => setOpen(false)}>Contact</Link></li>
               </ul>
             </motion.div>

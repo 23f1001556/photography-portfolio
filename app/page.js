@@ -4,6 +4,9 @@ import HomePage from './components/Home'
 import Gallary from './components/Gallary'
 import Contact from './components/Contact'
 import Story from './components/Story'
+import Services from './components/Services'
+import Testimonials from './components/Testimonials'
+
 export default function Home() {
   return (
     <>
@@ -11,6 +14,8 @@ export default function Home() {
     <HomePage/>
     <Story/>
     <Gallary />
+    <Services />
+    <Testimonials />
     <Contact/>
     </>
   
