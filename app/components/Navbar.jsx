@@ -23,22 +23,27 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-md text-white p-3"
+        className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg border-b border-white/10 text-white py-4"
       >
-        <div className="max-w-7xl mx-auto flex items-center">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
           {/* Logo */}
-          <Link href="/" className="font-bold cursor-pointer hover:text-yellow-400">
-            MY App
+          <Link href="/" className="text-2xl font-serif font-bold tracking-wider cursor-pointer hover:text-gray-300 transition-colors">
+            NISHA AGGRAWAL
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="#story">Story</Link></li>
-            <li><Link href="#gallery">Gallery</Link></li>
-            <li><Link href="#services">Services</Link></li>
-            <li><Link href="#testimonials">Testimonials</Link></li>
-            <li><Link href="#contact">Contact</Link></li>
+          <ul className="hidden md:flex space-x-8">
+            {["Home", "Story", "Gallery", "Diary", "Services", "Testimonials", "Contact"].map((item) => (
+              <li key={item}>
+                <Link
+                  href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
+                  className="text-sm uppercase tracking-widest hover:text-gray-300 transition-colors relative group"
+                >
+                  {item}
+                  <span className="absolute left-0 bottom-[-4px] w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+                </Link>
+              </li>
+            ))}
           </ul>
 
           {/* Mobile Hamburger */}
@@ -77,6 +82,7 @@ export default function Navbar() {
                 <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
                 <li><Link href="#story" onClick={() => setOpen(false)}>Story</Link></li>
                 <li><Link href="#gallery" onClick={() => setOpen(false)}>Gallery</Link></li>
+                <li><Link href="#diary" onClick={() => setOpen(false)}>Diary</Link></li>
                 <li><Link href="#services" onClick={() => setOpen(false)}>Services</Link></li>
                 <li><Link href="#testimonials" onClick={() => setOpen(false)}>Testimonials</Link></li>
                 <li><Link href="#contact" onClick={() => setOpen(false)}>Contact</Link></li>

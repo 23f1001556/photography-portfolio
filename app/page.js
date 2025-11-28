@@ -5,6 +5,7 @@ import Gallary from './components/Gallary'
 import Contact from './components/Contact'
 import Story from './components/Story'
 import Services from './components/Services'
+import Diary from './components/Diary'
 import Testimonials from './components/Testimonials'
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <HomePage/>
     <Story/>
     <Gallary />
+    <Diary />
     <Services />
     <Testimonials />
     <Contact/>

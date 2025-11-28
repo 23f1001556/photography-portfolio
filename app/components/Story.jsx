@@ -84,15 +84,15 @@ export default function Story() {
   };
 
   return (
-    <div id="story" className="py-16 bg-gray-100 dark:bg-gray-900">
+    <div id="story" className="pt-8 pb-20 bg-neutral-950 text-white">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-3xl font-bold text-center mb-8 text-black dark:text-white"
+        className="text-4xl md:text-5xl font-serif font-bold text-center mb-12 text-white"
       >
-        Story Section
+        Visual Stories
       </motion.h2>
 
       <motion.div
@@ -114,8 +114,8 @@ export default function Story() {
                 <Image src={item.src} alt={item.title} width={600} height={400} className="rounded-lg object-cover w-full h-80" />
               </div>
               <div className={`md:w-1/2 text-center md:text-left ${index % 2 === 0 ? "md:order-2" : ""}`}>
-                <h3 className="text-2xl font-bold text-black dark:text-white mb-2">{item.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+                <h3 className="text-3xl font-serif font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-gray-300 text-lg font-light leading-relaxed">{item.description}</p>
               </div>
             </div>
           ))}

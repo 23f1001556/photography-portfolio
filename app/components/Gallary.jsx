@@ -14,7 +14,6 @@ export default function Gallery() {
     { src: "https://res.cloudinary.com/duliozn9g/image/upload/v1764015950/kolkata2_xeex58.jpg", category: "City" },
     { src: "https://res.cloudinary.com/duliozn9g/image/upload/v1764015922/people4_vumpko.jpg", category: "People" },
     { src: "https://res.cloudinary.com/duliozn9g/image/upload/v1764015922/photo5_jpvlxv.jpg", category: "City" },
-    { src: "https://res.cloudinary.com/duliozn9g/image/upload/v1764015922/img7_hua4fs.jpg", category: "City" },
     { src: "https://res.cloudinary.com/duliozn9g/image/upload/v1764015922/img4_e3mxl7.jpg", category: "City" },
     { src: "https://res.cloudinary.com/duliozn9g/image/upload/v1764015920/photo4_n4dmka.jpg", category: "City" },
     { src: "https://res.cloudinary.com/duliozn9g/image/upload/v1764015918/photo3_ur48up.jpg", category: "City" },
@@ -64,7 +63,7 @@ export default function Gallery() {
       {/* Photo Grid */}
       <motion.div
         layout
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
         variants={{
           hidden: { opacity: 0 },
           show: {
@@ -90,16 +89,21 @@ export default function Gallery() {
               exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               key={photo.src}
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer aspect-square overflow-hidden rounded-xl shadow-lg"
             >
               <Image
                 src={photo.src}
                 alt={`${photo.category} Photo`}
-                width={400}
-                height={300}
-                className="rounded-lg object-cover w-full h-48 group-hover:opacity-80 transition"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
                 onClick={() => setSelectedImage(photo.src)}
               />
+              <div
+                className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                onClick={() => setSelectedImage(photo.src)}
+              >
+                <p className="text-white font-serif tracking-widest uppercase text-sm">View</p>
+              </div>
             </motion.div>
           ))}
         </AnimatePresence>
