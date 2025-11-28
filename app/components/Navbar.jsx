@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -18,7 +19,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-md text-white p-3">
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-md text-white p-3"
+      >
         <div className="max-w-7xl mx-auto flex items-center">
           {/* Logo */}
           <Link href="/" className="font-bold cursor-pointer hover:text-yellow-400">
@@ -41,31 +47,40 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Menu */}
-      {open && (
-        <div className="fixed inset-0 z-50 flex">
-          {/* Overlay */}
-          <div
-            className="absolute inset-0 bg-black/80"
-            onClick={() => setOpen(false)}
-          ></div>
+      <AnimatePresence>
+        {open && (
+          <div className="fixed inset-0 z-50 flex">
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/80"
+              onClick={() => setOpen(false)}
+            ></motion.div>
 
-          {/* Sliding menu */}
-          <div
-            ref={menuRef}
-            className="relative w-64 bg-black text-white p-6 transform transition-transform duration-300 translate-x-0"
-          >
-            <ul className="flex flex-col space-y-4">
-              <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
-              <li><Link href="#story" onClick={() => setOpen(false)}>Story</Link></li>
-              <li><Link href="#gallery" onClick={() => setOpen(false)}>Gallery</Link></li>
-              <li><Link href="#contact" onClick={() => setOpen(false)}>Contact</Link></li>
-            </ul>
+            {/* Sliding menu */}
+            <motion.div
+              ref={menuRef}
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="relative w-64 bg-black text-white p-6"
+            >
+              <ul className="flex flex-col space-y-4">
+                <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
+                <li><Link href="#story" onClick={() => setOpen(false)}>Story</Link></li>
+                <li><Link href="#gallery" onClick={() => setOpen(false)}>Gallery</Link></li>
+                <li><Link href="#contact" onClick={() => setOpen(false)}>Contact</Link></li>
+              </ul>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 }

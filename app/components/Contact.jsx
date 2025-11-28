@@ -1,8 +1,17 @@
 "use client";
 
+import { motion } from "motion/react";
+
 export default function Contact() {
   return (
-    <div id="contact" className="p-8 max-w-xl mx-auto rounded shadow-md">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      id="contact"
+      className="p-8 max-w-xl mx-auto rounded shadow-md"
+    >
       <h1 className="text-3xl font-bold mb-6">Get in Touch</h1>
 
       <p className="mb-4">
@@ -37,6 +46,6 @@ export default function Contact() {
           </a>
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 }
