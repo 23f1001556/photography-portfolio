@@ -8,7 +8,7 @@ export default function Home() {
       {/* Hero Section */}
       <div id="home" className="relative w-full h-screen">
         <Image
-          src="https://res.cloudinary.com/duliozn9g/image/upload/v1764056586/photo8_uxxgj4.jpg"
+          src="https://res.cloudinary.com/duliozn9g/image/upload/v1764061232/photo11_ecgp6k.jpg"
           alt="my photo"
           fill={true}
           priority
@@ -22,7 +22,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10"
+          className="absolute inset-0 flex flex-col items-center justify-end pb-32 text-center px-4 z-10"
         >
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 tracking-tight drop-shadow-lg">
             Cinematic Moments
@@ -45,7 +45,7 @@ export default function Home() {
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-gray-800 shadow-2xl">
             <Image
-              src="https://res.cloudinary.com/duliozn9g/image/upload/v1764061232/photo11_ecgp6k.jpg"
+              src="https://res.cloudinary.com/duliozn9g/image/upload/v1764056586/photo8_uxxgj4.jpg"
               alt="Emaa"
               fill
               className="object-cover"
