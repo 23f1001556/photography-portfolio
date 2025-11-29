@@ -34,7 +34,7 @@ export default function Home() {
       </div>
 
       {/* Bio Section */}
-      <div className="relative w-full flex flex-col md:flex-row items-center justify-center px-8 py-24 bg-black text-white">
+      <div className="relative w-full flex flex-col md:flex-row items-center justify-center px-8 py-24 bg-neutral-950 text-white">
         {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}

@@ -30,7 +30,7 @@ export default function Gallery() {
   const categories = ["All", "People", "City"];
 
   return (
-    <div id="gallery" className="bg-gray-900 text-white px-6 py-12">
+    <div id="gallery" className="bg-neutral-950 text-white px-6 py-20">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
