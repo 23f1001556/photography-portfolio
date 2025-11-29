@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
-import { MapPin, Camera, X, Calendar } from "lucide-react";
+import { MapPin, Camera, X, Calendar, BookOpen } from "lucide-react";
 
 const diaries = [
     {
@@ -88,6 +88,11 @@ export default function Diary() {
                                 className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+                            <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full flex items-center space-x-2 border border-white/10 z-10">
+                                <BookOpen className="w-4 h-4 text-white" />
+                                <span className="text-xs font-medium text-white uppercase tracking-wider">Read Story</span>
+                            </div>
 
                             <div className="absolute bottom-0 left-0 p-6 w-full">
                                 <motion.div layoutId={`title-${diary.id}`}>
